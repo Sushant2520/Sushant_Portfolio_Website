@@ -67,7 +67,7 @@ export default function ParticleBackground({ theme = 'dark' }) {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         const particleColor = theme === 'dark' 
-          ? `rgba(56, 189, 248, ${this.alpha})`
+          ? `rgba(163, 230, 53, ${this.alpha})`
           : `rgba(2, 132, 199, ${this.alpha * 0.8})`;
         ctx.fillStyle = particleColor;
         ctx.fill();
@@ -81,7 +81,7 @@ export default function ParticleBackground({ theme = 'dark' }) {
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
 
-      const strokeColor = theme === 'dark' ? 'rgba(56, 189, 248, ' : 'rgba(2, 132, 199, ';
+      const strokeColor = theme === 'dark' ? 'rgba(163, 230, 53, ' : 'rgba(2, 132, 199, ';
 
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {

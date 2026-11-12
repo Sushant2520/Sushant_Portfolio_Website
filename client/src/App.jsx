@@ -5,7 +5,6 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
-import Skills from './components/Skills';
 import CertificationsAchievements from './components/CertificationsAchievements';
 import AIChatWidget from './components/AIChatWidget';
 import Contact from './components/Contact';
@@ -26,8 +25,8 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen relative selection:bg-cyan-500/30 selection:text-cyan-200 transition-colors duration-400 ${
-      theme === 'dark' ? 'bg-[#0b0f19] text-slate-100' : 'bg-[#f8fafc] text-slate-900'
+    <div className={`min-h-screen relative selection:bg-lime-400 selection:text-black transition-colors duration-400 ${
+      theme === 'dark' ? 'bg-[#050505] text-white' : 'bg-[#f8fafc] text-slate-900'
     }`}>
       {/* Dynamic Theme Particle Grid Background */}
       <ParticleBackground theme={theme} />
@@ -45,7 +44,6 @@ export default function App() {
         <About theme={theme} />
         <Experience theme={theme} />
         <Projects theme={theme} />
-        <Skills theme={theme} />
         <CertificationsAchievements theme={theme} />
         <Contact theme={theme} />
       </main>

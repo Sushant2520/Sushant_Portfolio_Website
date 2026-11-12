@@ -70,39 +70,39 @@ export default function AIChatWidget({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md">
-      <div className="bg-slate-900 border border-indigo-500/30 rounded-2xl w-full max-w-xl h-[580px] flex flex-col shadow-2xl overflow-hidden relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+      <div className="bg-[#0e120e] border border-white/10 rounded-2xl w-full max-w-xl h-[580px] flex flex-col shadow-2xl overflow-hidden relative">
         
         {/* Header */}
-        <div className="p-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+        <div className="p-4 bg-[#070907] border-b border-zinc-800 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-cyan-500 flex items-center justify-center text-white shadow-lg">
-              <Sparkles className="w-5 h-5 text-white" />
+            <div className="w-9 h-9 rounded-xl bg-lime-400 flex items-center justify-center text-black font-bold shadow-lg shadow-lime-500/20">
+              <Sparkles className="w-5 h-5 text-black" />
             </div>
             <div>
               <h3 className="font-bold text-white text-base flex items-center gap-2">
                 Ask Sushant AI Assistant
               </h3>
-              <p className="text-[11px] font-mono text-cyan-400">
+              <p className="text-[11px] font-mono text-lime-400">
                 Trained on Sushant Tripathi's Resume & Portfolio
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-zinc-800 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Quick Suggestion Chips */}
-        <div className="p-3 bg-slate-950/50 border-b border-slate-800/80 flex gap-2 overflow-x-auto no-scrollbar">
+        <div className="p-3 bg-[#070907]/60 border-b border-zinc-800 flex gap-2 overflow-x-auto no-scrollbar">
           {quickPrompts.map((prompt, idx) => (
             <button
               key={idx}
               onClick={() => handleSend(prompt)}
-              className="text-[11px] font-mono whitespace-nowrap px-3 py-1 rounded-full bg-slate-800/90 text-cyan-300 hover:bg-cyan-500/20 hover:text-white border border-slate-700/60 transition-all shrink-0"
+              className="text-[11px] font-mono whitespace-nowrap px-3 py-1 rounded-full bg-zinc-900 text-lime-300 hover:bg-lime-500/20 hover:text-white border border-zinc-800 transition-all shrink-0"
             >
               ⚡ {prompt}
             </button>
@@ -119,15 +119,15 @@ export default function AIChatWidget({ isOpen, onClose }) {
               }`}
             >
               {msg.sender === 'ai' && (
-                <div className="w-7 h-7 rounded-lg bg-indigo-600/30 border border-indigo-500/40 flex items-center justify-center text-indigo-300 shrink-0">
+                <div className="w-7 h-7 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-300 shrink-0">
                   <Bot className="w-4 h-4" />
                 </div>
               )}
               <div
                 className={`max-w-[80%] p-3.5 rounded-2xl text-xs sm:text-sm leading-relaxed ${
                   msg.sender === 'user'
-                    ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-tr-none'
-                    : 'bg-slate-800/90 text-slate-200 border border-slate-700/80 rounded-tl-none font-sans'
+                    ? 'bg-lime-400 text-black font-semibold rounded-tr-none'
+                    : 'bg-zinc-900/90 text-zinc-200 border border-zinc-800 rounded-tl-none font-sans'
                 }`}
               >
                 {msg.text.split('\n').map((line, i) => (
@@ -137,7 +137,7 @@ export default function AIChatWidget({ isOpen, onClose }) {
                 ))}
               </div>
               {msg.sender === 'user' && (
-                <div className="w-7 h-7 rounded-lg bg-cyan-600/30 border border-cyan-500/40 flex items-center justify-center text-cyan-300 shrink-0">
+                <div className="w-7 h-7 rounded-lg bg-lime-500/20 border border-lime-500/30 flex items-center justify-center text-lime-400 shrink-0">
                   <User className="w-4 h-4" />
                 </div>
               )}
@@ -145,8 +145,8 @@ export default function AIChatWidget({ isOpen, onClose }) {
           ))}
 
           {loading && (
-            <div className="flex items-center gap-2 text-xs font-mono text-cyan-400 p-2">
-              <RefreshCw className="w-4 h-4 animate-spin text-indigo-400" />
+            <div className="flex items-center gap-2 text-xs font-mono text-lime-400 p-2">
+              <RefreshCw className="w-4 h-4 animate-spin text-lime-400" />
               <span>Sushant AI is thinking...</span>
             </div>
           )}
@@ -159,19 +159,19 @@ export default function AIChatWidget({ isOpen, onClose }) {
             e.preventDefault();
             handleSend();
           }}
-          className="p-3 bg-slate-950 border-t border-slate-800 flex items-center gap-2"
+          className="p-3 bg-[#070907] border-t border-zinc-800 flex items-center gap-2"
         >
           <input
             type="text"
             value={inputQuery}
             onChange={(e) => setInputQuery(e.target.value)}
             placeholder="Ask about projects, tech stack, experience..."
-            className="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-500 placeholder-slate-500"
+            className="flex-1 bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-lime-400 placeholder-zinc-500"
           />
           <button
             type="submit"
             disabled={loading || !inputQuery.trim()}
-            className="p-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white disabled:opacity-50 hover:scale-105 transition-all shadow-md"
+            className="p-2.5 rounded-xl bg-lime-400 hover:bg-lime-300 text-black font-bold disabled:opacity-50 hover:scale-105 transition-all shadow-md"
           >
             <Send className="w-4 h-4" />
           </button>

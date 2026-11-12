@@ -19,18 +19,18 @@ export default function Skills() {
     : skillCategories.filter(c => c.name === selectedCategory);
 
   return (
-    <section id="skills" className="py-20 relative z-10 bg-slate-950/40 border-y border-slate-800/50">
+    <section id="skills" className="py-20 relative z-10 bg-[#060606] border-y border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono font-semibold mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-500/10 border border-lime-500/25 text-lime-400 text-xs font-mono font-semibold mb-3">
             <Cpu className="w-3.5 h-3.5" />
             <span>TECHNICAL PROFICIENCY</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Tools, Technologies & <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-lime-400 via-lime-300 to-emerald-400 bg-clip-text text-transparent">
               Data Engineering Matrix
             </span>
           </h2>
@@ -47,8 +47,8 @@ export default function Skills() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-full text-xs font-semibold font-mono transition-all border ${
                 selectedCategory === cat
-                  ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-cyan-400 font-bold shadow-lg shadow-cyan-500/20'
-                  : 'bg-slate-900/60 text-slate-400 border-slate-800 hover:text-white hover:border-slate-700'
+                  ? 'bg-lime-400 text-black border-lime-400 font-extrabold shadow-lg shadow-lime-500/25'
+                  : 'bg-zinc-950/80 text-zinc-400 border-zinc-800 hover:text-white hover:border-zinc-700'
               }`}
             >
               {cat}
@@ -61,9 +61,9 @@ export default function Skills() {
           {displayCategories.map((cat, idx) => {
             const IconComp = iconMap[cat.icon] || Terminal;
             return (
-              <div key={idx} className="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800">
-                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800/80">
-                  <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+              <div key={idx} className="glass-card p-6 sm:p-8 rounded-2xl border border-white/10">
+                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-zinc-800">
+                  <div className="w-10 h-10 rounded-xl bg-lime-500/10 border border-lime-500/25 flex items-center justify-center text-lime-400">
                     <IconComp className="w-5 h-5" />
                   </div>
                   <h3 className="text-xl font-bold text-white">
@@ -79,11 +79,11 @@ export default function Skills() {
                           <span>{skill.icon}</span>
                           <span className="font-bold">{skill.name}</span>
                         </span>
-                        <span className="text-cyan-400 font-mono">{skill.level}%</span>
+                        <span className="text-lime-400 font-mono font-bold">{skill.level}%</span>
                       </div>
-                      <div className="w-full h-2 rounded-full bg-slate-900 overflow-hidden p-0.5 border border-slate-800">
+                      <div className="w-full h-2 rounded-full bg-zinc-900 overflow-hidden p-0.5 border border-zinc-800">
                         <div
-                          className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 transition-all duration-1000"
+                          className="h-full rounded-full bg-gradient-to-r from-lime-400 to-emerald-400 transition-all duration-1000 shadow-[0_0_10px_rgba(163,230,53,0.3)]"
                           style={{ width: `${skill.level}%` }}
                         />
                       </div>

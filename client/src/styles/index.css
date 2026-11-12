@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --bg-dark: #0b0f19;
-  --bg-card-dark: rgba(15, 23, 42, 0.65);
+  --bg-dark: #050505;
+  --bg-card-dark: rgba(14, 17, 14, 0.7);
   --border-card-dark: rgba(255, 255, 255, 0.08);
 
-  --cyan-accent: #38bdf8;
-  --violet-accent: #818cf8;
+  --lime-accent: #a3e635;
+  --lime-glow: rgba(163, 230, 53, 0.35);
   --emerald-accent: #34d399;
 }
 
@@ -16,10 +16,10 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Night / Dark Mode Background */
+/* Night / Dark Mode Background - Midnight Black */
 body.dark {
-  background-color: #0b0f19;
-  color: #f1f5f9;
+  background-color: #050505;
+  color: #ffffff;
 }
 
 /* Day / Light Mode Rich Gradient Background */
@@ -35,22 +35,22 @@ code, pre, .font-mono {
 
 /* Glassmorphism Cards - Dark Mode */
 body.dark .glass-card {
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(14, 18, 14, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body.dark .glass-card:hover {
-  border-color: rgba(56, 189, 248, 0.3);
-  box-shadow: 0 12px 40px 0 rgba(56, 189, 248, 0.12);
+  border-color: rgba(163, 230, 53, 0.35);
+  box-shadow: 0 12px 40px 0 rgba(163, 230, 53, 0.12);
   transform: translateY(-2px);
 }
 
 body.dark .glass-card-static {
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(14, 18, 14, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -144,22 +144,24 @@ body.light .text-indigo-400 {
 body.light .bg-gradient-to-r.from-cyan-400.via-sky-300.to-indigo-400,
 body.light .bg-gradient-to-r.from-cyan-400.to-indigo-400 {
   background-image: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #6366f1 100%) !important;
+  background-clip: text !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
 
 body.light .gradient-text-cyan {
   background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #6366f1 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Custom Scrollbar */
 body.dark ::-webkit-scrollbar-track {
-  background: #0b0f19;
+  background: #050505;
 }
 body.dark ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #1c221c;
 }
 
 body.light ::-webkit-scrollbar-track {
@@ -171,7 +173,7 @@ body.light ::-webkit-scrollbar-thumb {
 
 /* Grid overlay background */
 body.dark .bg-grid-pattern {
-  background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(163, 230, 53, 0.08) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
@@ -179,3 +181,28 @@ body.light .bg-grid-pattern {
   background-image: radial-gradient(rgba(2, 132, 199, 0.12) 1px, transparent 1px);
   background-size: 32px 32px;
 }
+
+/* Code Badge Styling for technical terms */
+code.code-badge {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8125rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.15rem;
+}
+
+body.dark code.code-badge {
+  background-color: rgba(163, 230, 53, 0.12);
+  color: #a3e635;
+  border: 1px solid rgba(163, 230, 53, 0.25);
+}
+
+body.light code.code-badge {
+  background-color: rgba(2, 132, 199, 0.1);
+  color: #0369a1;
+  border: 1px solid rgba(2, 132, 199, 0.25);
+}
+
